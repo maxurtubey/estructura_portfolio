@@ -1,0 +1,7 @@
+.error{
+  color:red;
+}
+
+.border-danger{
+  border: red 1px solid;
+}

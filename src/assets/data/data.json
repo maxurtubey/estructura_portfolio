@@ -1,0 +1,64 @@
+{
+  "name": "Maximiliano A. Urtubey",
+  "backImage": "assets/img/fondo_header.jpg",
+  "image": "assets/img/profile_picture.jpg",
+  "position":"Arquitecto",
+  "company": {
+    "name": "",
+    "img": "",
+    "url": "#"
+  },
+  "school": {
+    "name": "FAPyD - Universidad Nacional de Rosario",
+    "img": "assets/img/educacion.png",
+    "url": "#"
+  },
+  "location": "Rosario, Santa Fe (Argentina)",
+  "about": "",
+  "experience": [{
+    "position":"",
+    "company":"",
+    "img":"",
+    "mode":"",
+    "start":"",
+    "end":""
+  }],
+
+  "education":[{
+      "school": "Facultad de Arquitectura Planeamiento y Diseño",
+      "title":"Arquitecto",
+      "img": "assets/img/educacion.png",
+      "carrer":"FAPyD - UNR",
+      "start": 1997,
+      "end": 2004,
+      "url": "#"
+    },
+    {
+      "school": "Instituto Politécnico Superior Gral. San Martín",
+      "title":"Bachiller TCO",
+      "img": "assets/img/educacion.png",
+      "carrer":"IPS - UNR",
+      "start": 1991,
+      "end": 1996,
+      "url": "#"
+    },
+    {
+      "school": "Cultural Inglesa - Rosario",
+      "title":"Idioma Inglés",
+      "img": "assets/img/educacion.png",
+      "carrer":"ARCI",
+      "start": 1987,
+      "end": 1991,
+      "url": "#"
+    }
+  ],
+
+  "aptitudes":[{
+    "name":"Resolución de Problemas",
+    "progress": 75,
+    "confirms": 3,
+    "confirmsNames":[{
+
+    }]
+  }]
+}

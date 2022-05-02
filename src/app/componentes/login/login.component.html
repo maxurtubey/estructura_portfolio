@@ -1,0 +1,43 @@
+<!-- Login -->
+
+<form [formGroup]="formulario" (ngSubmit)="onEnviar($event)">
+  <input
+  type="text" 
+  id="nombreusuario" 
+  placeholder="Usuario" 
+  class="form-control" 
+  style="height: 22px; width: 110px" 
+  formControlName="nombre"/>
+
+  <!-- Gracias al getter que configuramos en el controlador -->
+  <div *ngIf="Nombre?.errors && Nombre?.touched">    
+    <p *ngIf="Nombre?.hasError('required')" class="error">
+        El nombre es requerido.
+    </p>
+    <p *ngIf="Nombre?.errors?.['minlength'] || Nombre?.errors?.['maxlength']" class="error">
+        El usuario debe tener entre 3 y 15 caracteres.
+      </p>
+  </div>
+
+  <input 
+  type="password" 
+  id="contraseña" 
+  placeholder="Contraseña" 
+  class="form-control" 
+  style="height: 22px; width: 110px" 
+  formControlName="clave"/>
+  <!-- Gracias al getter que configuramos en el controlador -->
+  <div *ngIf="Clave?.errors && Clave?.touched">
+    <p *ngIf="Clave?.hasError('required')" class="error">
+      El password es requerido.
+    </p>
+    <p *ngIf="Clave?.errors?.['minlength']" class="error">
+      El password debe tener 8 o más caracteres.
+    </p>
+  </div>
+  <input type=button [disabled]="formulario.invalid" value="ingresar" 
+  class="form btn btn-light" 
+  style="height: 20px; line-height: 0px" 
+  onclick="fnValidar()">
+  <input type=button value="X" class="form btn btn-light" style="height: 20px; line-height: 0px" (click)="formulario.reset()">
+</form>

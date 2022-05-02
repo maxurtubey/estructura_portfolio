@@ -1,0 +1,56 @@
+<!-- Before Header / Acceso -->
+<div class="container">
+  <div class="card bg-secondary" style="height: 70px">
+    <div class="row h-100">
+      <div class="col-2 my-auto">
+        <img src="assets/img/APLogo-20-20.png" alt="logo Argentina Programa" style="height: 50px; margin-left: 50px">
+      </div>
+      <div class="col"></div>
+      <div class="col-3 my-auto">
+        <a href="https://www.linkedin.com/in/maximiliano-urtubey/" target="_blank">
+          <img class="img-fluid" src="assets/img/LinkeIn_logo.png" alt="logo LinkedIn" style="height: 30px">
+        </a>
+        <a href="https://github.com/maxurtubey" target="_blank">
+          <img class="img-fluid" src="assets/img/GitHub_logo.png" alt="logo GitHub"
+            style="height: 30px; margin-left: 10px">
+        </a>
+        <button type="button" (click)="open(content)" class="btn btn-light btn-sm"
+          style="margin-left: 50px">login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">login</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formulario" (ngSubmit)="onEnviar($event)">
+      <input type="text" id="nombreusuario" placeholder="Usuario" class="form-control" formControlName="nombre" [ngClass]="{'border-danger': Nombre?.errors && Nombre?.touched}"/>
+        <div *ngIf="Nombre?.errors && Nombre?.touched">
+        <p *ngIf="Nombre?.hasError('required')" class="error">El nombre es requerido.</p>
+        <p *ngIf="Nombre?.errors?.['minlength'] || Nombre?.errors?.['maxlength']" class="error">El usuario debe tener
+          entre 3 y 15 caracteres.</p>
+      </div>
+      <br>
+
+      <input type="password" id="contraseña" placeholder="Contraseña" class="form-control" formControlName="clave" [ngClass]="{'border-danger': Clave?.errors && Clave?.touched}"/>
+      <div *ngIf="Clave?.errors && Clave?.touched">
+        <p *ngIf="Clave?.hasError('required')" class="error">El password es requerido.</p>
+        <p *ngIf="Clave?.errors?.['minlength']" class="error">El password debe tener 8 o más caracteres.</p>
+      </div>
+      <br>
+
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <button type=button class="btn btn-outline-dark" (click)="formulario.reset()">reset</button>
+    <button type="button" [disabled]="formulario.invalid" class="btn btn-info"
+      (click)="modal.close('Save click')">ingresar</button>
+  </div>
+</ng-template>

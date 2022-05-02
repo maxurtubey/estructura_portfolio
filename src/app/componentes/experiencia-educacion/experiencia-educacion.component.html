@@ -1,0 +1,47 @@
+<!-- Tercera Tarjeta / Experiencia-Educación -->
+<div class="container">
+  <div class="card bg-secondary" style="padding: 20px">
+    <div class="row">
+      <div class="col-5">
+        <h2 class="bco">Experiencia:</h2>
+      </div>
+      <div class="col"></div>
+      <div class="col-1 flex2">
+        <a href="#" class="btn-right"><i class="far fa-plus fa-lg"></i></a>
+        <a href="#" class="btn-right"><i class="far fa-edit fa-lg"></i></a>
+      </div>
+    </div>
+    <p class="bco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit vel illum, ullam sapiente culpa
+      minus quas
+      sit sunt asperiores, recusandae consequuntur quibusdam! Eveniet porro placeat sapiente pariatur, odit eaque
+      inventore.</p>
+    <br>
+    <hr class="bco">
+    <h2 class="bco">Educación:</h2>
+    <br>
+    <ul id="info_details">
+      <div class="row">
+        <li *ngFor="let educacion of educacionLista">
+          <div class="data-container">
+            <div class="col-2">
+              <a href="#">
+                <img [src]="educacion.img" alt="" style="height: 60px; margin-left: -10px">
+              </a>
+            </div>
+            <div class="col-10">
+              <h3 class="bco">{{educacion.carrer}}</h3>
+              <h5 class="bco">{{educacion.school}}</h5>
+              <p class="bco">{{educacion.title}}</p>
+              <p class="bco"><time>{{educacion.start}}</time>-<time>{{educacion.end}}</time></p>
+              <!-- <p class="bco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit vel illum, ullam sapiente
+                culpa minus quas
+                sit sunt asperiores, recusandae consequuntur quibusdam! Eveniet porro placeat sapiente pariatur, odit
+                eaque
+                inventore.</p> -->
+              <br>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>

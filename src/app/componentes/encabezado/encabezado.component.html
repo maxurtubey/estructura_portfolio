@@ -1,0 +1,59 @@
+<!-- Barra Superior / Acceso
+<div class="container">
+  <div class="card bg-secondary" style="height: 60px">
+    <div class="row h-100">
+      <div class="col-2 my-auto">
+        <img src="assets/img/APLogo-20-20.png" alt="logo Argentina Programa" style="height: 50px; margin-left: 50px">
+      </div>
+      <div class="col"></div>
+      <div class="col-1 my-auto">
+        <a href="https://www.linkedin.com/in/maximiliano-urtubey/" target="_blank">
+          <img class="img-fluid" src="assets/img/LinkeIn_logo.png" alt="logo LinkedIn" style="height: 25px">
+        </a>
+        <a href="https://github.com/maxurtubey" target="_blank">
+          <img class="img-fluid" src="assets/img/GitHub_logo.png" alt="logo GitHub"
+            style="height: 25px; margin-left: 10px">
+        </a>
+      </div>
+      <div class="col-4 d-flex my-auto justify-content-end" style="margin-right: 10px">
+        <span class="bco my-auto" style="margin-right: 5px; font-size: 14px">login:</span>
+        <form action="">
+          <input type="text" name="usuario" id="usuario" placeholder="Usuario" class="form" style="height: 20px; width: 90px">
+          <input type=password name="password" id="contraseña" placeholder="Contraseña" class="form" style="height: 20px; width: 90px">
+          <input type=button value="ingresar" class="form btn btn-light" style="height: 20px; line-height: 0px" onclick="fnValidar()">
+          <input type=button value="X" class="form btn btn-light" style="height: 20px; line-height: 0px" onclick="fnCancelar()">
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Primera Tarjeta / Perfil -->
+<header>
+  <ng-container *ngIf="miPortfolio">
+    <div class="container">
+      <div class="card bg-secondary">
+        <!-- <img src="assets/img/fondo_header.jpg" class="card-img-top" alt="..." /> -->
+        <img [src]="miPortfolio.backImage" class="card-img-top" alt="..." />
+        <div class="card-body" id="info_img">
+          <div class="d-flex">
+            <!-- <img class="profile_img rounded-circle border border-5 border-secondary" src="assets/img/profile_picture.jpg" alt="foto del perfil"> -->
+            <img class="profile_img rounded-circle border border-5 border-secondary" [src]="miPortfolio?.image" alt="foto del perfil" />
+            <div class="btn-edit"><a href="#" class="btn-right"><i class="far fa-edit fa-lg profile-edit"></i></a></div>
+          </div>
+          <div id="info_data" class="">
+            <h2 class="card-title bco">{{miPortfolio.name}}</h2>
+            <!-- <div id="info_company" class="bco">Puesto actual</div> -->
+            <div id="info_contact" class="data-container">
+              <p class="bco">{{miPortfolio.location}}</p>
+              <p><a class="info_contacto" href="#">Información de contacto</a></p>
+            </div>
+          </div>
+          <a href="#" class="btn btn-info btn-sm">Tengo interés en</a>
+          <a href="#" class="btn btn-light btn-sm">Añadir Sección</a>
+          <a href="#" class="btn btn-light btn-sm">+</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</header>
